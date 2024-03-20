@@ -35,7 +35,10 @@ jobs:
 
     - name: Install dependencies
       run: bundle install
-        
+    - run: |
+          cd run
+          curl -fsSL https://github.com/gzuidhof/coi-serviceworker/raw/master/coi-serviceworker.js > coi-serviceworker.js
+          sed -i 's#\(		<script src="index.js"></script>\)#		<script src="coi-serviceworker.js"></script>\n\1#g' Terminal.html
     - name: Run jekyll
       run: bundle exec jekyll build -d public
 
