@@ -133,9 +133,16 @@ body {
 			<div id="status-notice" class="godot" style="display: none;"></div>
 		</div>
 
-		<script src="Terminal.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":1,"executable":"Terminal","experimentalVK":false,"fileSizes":{"Terminal.pck":33344,"Terminal.wasm":1642372},"focusCanvas":true,"gdextensionLibs":[]};
+if (!window.SharedArrayBuffer) {
+	document.getElementById('status').style.display = 'none';
+	setTimeout(() => document.getElementById('status').style.display = '', 1500);
+}
+</script>
+<script src="coi-serviceworker.min.js"></script>
+<script src="Terminal.js"></script>
+		<script>
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":1,"executable":"Terminal","experimentalVK":false,"fileSizes":{"Terminal.pck":28688,"Terminal.wasm":1642372},"focusCanvas":true,"gdextensionLibs":[]};
 const engine = new Engine(GODOT_CONFIG);
 
 (function () {
