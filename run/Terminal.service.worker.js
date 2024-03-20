@@ -3,14 +3,14 @@
 // that they need an Internet connection to run the project if desired.
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
-const CACHE_VERSION = "1710930501|42283099";
+const CACHE_VERSION = "1710935555|1175567174";
 const CACHE_PREFIX = "Terminal-sw-cache-";
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
 const OFFLINE_URL = "Terminal.offline.html";
 // Files that will be cached on load.
 const CACHED_FILES = ["Terminal.html","Terminal.js","Terminal.offline.html","Terminal.worker.js","Terminal.audio.worklet.js"];
 // Files that we might not want the user to preload, and will only be cached on first load.
-const CACHABLE_FILES = ["Terminal.wasm","Terminal.pck"];
+const CACHABLE_FILES = ["Terminal.wasm","Terminal.pck","Terminal.side.wasm"];
 const FULL_CACHE = CACHED_FILES.concat(CACHABLE_FILES);
 
 self.addEventListener("install", (event) => {
